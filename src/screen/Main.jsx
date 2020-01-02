@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "../css/main.css";
+import firebase from "firebase";
 import Profile from "../assets/profile.jpg";
 
 const infomation = [
-  { title: "DATE", content: "2020년 1월 4일 토요일" },
+  { title: "DATE", content: "2020년 1월 4일 토요일 저녁 6시" },
   {
     title: "LOCATION",
     content: "이태원 어반호스트 그라운드 g4 (click!)",
@@ -17,8 +18,32 @@ const infomation = [
 ];
 
 class Main extends Component {
-  state = {};
+  state = { user: this.props.user };
 
+  componentDidMount() {
+    const { user } = this.state;
+    const uid = user.uid;
+
+    firebase
+      .database()
+      .ref(`Users/${uid}`)
+      .once("value", snapshot => {
+        // console.log(snapshot.val().name);
+        if (snapshot.val()) {
+          if (snapshot.val().name === undefined) {
+            firebase
+              .database()
+              .ref(`Users/${uid}`)
+              .update({ name: user.displayName });
+          }
+        } else {
+          firebase
+            .database()
+            .ref(`Users/${uid}`)
+            .update({ name: user.displayName });
+        }
+      });
+  }
   goToMap = link => {
     window.open(link, "_blank");
   };

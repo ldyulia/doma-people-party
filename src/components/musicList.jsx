@@ -29,7 +29,6 @@ const MusicList = () => {
 
           setList(listArr);
           setLoading(false);
-          console.log(list);
         }
       });
   };
