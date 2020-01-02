@@ -22,7 +22,7 @@ const FoodList = () => {
     firebase
       .database()
       .ref("food")
-      .once("value", snapshot => {
+      .on("value", snapshot => {
         // console.log(snapshot.val());
         if (snapshot.val()) {
           const originData = snapshot.val();

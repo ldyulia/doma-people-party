@@ -15,7 +15,9 @@ const RequestFood = ({ user }) => {
       setLoading(false);
     } else {
       const timestamp = new Date().getTime();
-      const foodData = { [timestamp]: { menu, timestamp } };
+      const foodData = {
+        [timestamp]: { menu, timestamp, by: user.displayName }
+      };
 
       dataSubmit(user.uid, "food", foodData);
     }

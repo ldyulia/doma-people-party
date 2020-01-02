@@ -16,7 +16,9 @@ const RequestMusic = ({ user }) => {
       setLoading(false);
     } else {
       const timestamp = new Date().getTime();
-      const songData = { [timestamp]: { singer, title, timestamp } };
+      const songData = {
+        [timestamp]: { singer, title, timestamp, by: user.displayName }
+      };
 
       dataSubmit(user.uid, "music", songData);
     }

@@ -16,7 +16,7 @@ const MusicList = () => {
     firebase
       .database()
       .ref("music")
-      .once("value", snapshot => {
+      .on("value", snapshot => {
         // console.log(snapshot.val());
         if (snapshot.val()) {
           const originData = snapshot.val();
