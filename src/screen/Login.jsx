@@ -2,6 +2,7 @@ import React from "react";
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import "../css/login.css";
+import { Icon } from "antd";
 
 const uiConfig = {
   signInFlow: "popup",
@@ -16,7 +17,8 @@ const Login = () => {
     <div className="loginContainer">
       <div>
         <div className="titleWrap">
-          <div className="title1">
+          <h1>INVITATION</h1>
+          {/* <div className="title1">
             <h1>2 0 1 9</h1>
           </div>
           <div className="title2">
@@ -24,12 +26,17 @@ const Login = () => {
           </div>
           <div className="title3">
             <h1>people</h1>
-          </div>
+          </div> */}
         </div>
-        <StyledFirebaseAuth
-          uiConfig={uiConfig}
-          firebaseAuth={firebase.auth()}
-        />
+        <div className="loginBtn">
+          <Icon className="twitterIcon" type="twitter-circle" theme="filled" />
+          <StyledFirebaseAuth
+            className="defaultIcon"
+            uiConfig={uiConfig}
+            firebaseAuth={firebase.auth()}
+          />
+        </div>
+        <div className="enter">ENTER!</div>
       </div>
     </div>
   );

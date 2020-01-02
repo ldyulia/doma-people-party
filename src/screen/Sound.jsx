@@ -12,7 +12,7 @@ class Sound extends Component {
     return (
       <div>
         <div className="title">
-          <h1>PLAY LIST</h1>
+          <h1>PLAYLIST</h1>
         </div>
         <div className="musicListWrap">
           <MusicList />

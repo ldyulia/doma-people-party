@@ -19,10 +19,36 @@
 }
 .musicListWrap ul li {
   text-align: left;
+  margin-bottom: 10px;
+}
+.musicListWrap ul li.foodList {
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-.anticon-play-square {
+.musicListWrap ul li i {
   margin-right: 10px;
+}
+
+.musicListWrap ul li.foodList img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+.musicListWrap ul li.musicList img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  animation: playMusic infinite 1s linear;
+}
+
+@keyframes playMusic {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .requestMusic {
@@ -31,7 +57,7 @@
   bottom: 0;
   transform: translateX(-50%);
   width: 90%; */
-  padding: 0 5%;
+  padding: 20px 5% 0;
 }
 .requestMusic input {
   display: block;

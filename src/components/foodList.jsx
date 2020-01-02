@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Icon } from "antd";
 import firebase from "firebase";
-import play from "../assets/play.png";
+import food1 from "../assets/food1.png";
+import food2 from "../assets/food2.png";
+import food3 from "../assets/food3.png";
+import food4 from "../assets/food4.png";
+import food5 from "../assets/food5.png";
 
-const MusicList = () => {
+const imgList = [food1, food2, food3, food4, food5];
+
+const FoodList = () => {
   const [loading, setLoading] = useState(true);
   const [list, setList] = useState(null);
-  // console.log(list);
+  // console.log(randomImg);
 
   useEffect(() => {
     getList();
@@ -15,7 +21,7 @@ const MusicList = () => {
   const getList = () => {
     firebase
       .database()
-      .ref("music")
+      .ref("food")
       .once("value", snapshot => {
         // console.log(snapshot.val());
         if (snapshot.val()) {
@@ -29,7 +35,6 @@ const MusicList = () => {
 
           setList(listArr);
           setLoading(false);
-          console.log(list);
         }
       });
   };
@@ -40,10 +45,13 @@ const MusicList = () => {
         <Icon type="loading" />
       ) : (
         list.map((item, i) => (
-          <li key={i} className="list musicList">
-            {/* <Icon type="play-square" theme="filled" /> */}
-            <img src={play} alt="" className="src" />
-            {item.singer} - {item.title}
+          <li key={i} className="list foodList">
+            <img
+              src={imgList[Math.floor(Math.random() * imgList.length)]}
+              key={i}
+            />
+
+            {item.menu}
           </li>
         ))
       )}
@@ -51,4 +59,4 @@ const MusicList = () => {
   );
 };
 
-export default MusicList;
+export default FoodList;

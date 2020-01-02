@@ -4,23 +4,33 @@
   background-color: #000;
 }
 .titleWrap {
-  margin: 100px auto 50px;
-  border: 1px solid #fff;
-  border-radius: 10px;
-  width: 200px;
-  padding: 30px 0;
+  margin-top: 50%;
+  margin-bottom: 40px;
 }
 .titleWrap h1 {
-  color: #fff;
-  line-height: 10px;
-}
-.title1 h1 {
+  margin-bottom: 15px;
+  font-size: 48px;
   font-weight: 100;
-  font-size: 2.8em;
+  font-style: italic;
+  color: #fff;
+  line-height: 40px;
 }
-.title2 h1 {
+.loginBtn {
+  position: relative;
 }
-.title3 h1 {
-  font-size: 2.3em;
-  line-height: 5px;
+.defaultIcon {
+  opacity: 0;
+}
+.twitterIcon {
+  font-size: 70px;
+  color: #20ff20 !important;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -25%);
+}
+.enter {
+  margin-top: 20px;
+  font-style: italic;
+  color: #20ff20;
 }
