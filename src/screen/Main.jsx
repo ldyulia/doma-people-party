@@ -68,6 +68,9 @@ class Main extends Component {
             </div>
           ))}
         </div>
+        <div className="footer">
+          <span>Copyright(c) @doughmaster_ version 1.0.1</span>
+        </div>
       </>
     );
   }

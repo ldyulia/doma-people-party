@@ -1,7 +1,6 @@
 import firebase from "firebase";
 
 export const dataSubmit = (uid, fieldName, data) => {
-  // console.log(uid, data);
   firebase
     .database()
     .ref(`Users/${uid}/${fieldName}`)
@@ -10,7 +9,7 @@ export const dataSubmit = (uid, fieldName, data) => {
         alert(error);
         window.location.reload();
       } else {
-        console.log("save to firebase success");
+        console.log("save to user data success");
 
         firebase
           .database()
@@ -20,9 +19,9 @@ export const dataSubmit = (uid, fieldName, data) => {
               alert(error);
               window.location.reload();
             } else {
-              console.log("save to firebase success");
+              console.log("save to list data success");
               alert("Request Success");
-              window.location.reload();
+              // window.location.reload();
             }
           });
       }

@@ -43,3 +43,9 @@
   width: 63%;
   vertical-align: middle;
 } */
+.footer {
+  margin-top: 50px;
+}
+.footer span {
+  color: #999;
+}

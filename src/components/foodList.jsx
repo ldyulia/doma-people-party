@@ -48,6 +48,7 @@ const FoodList = () => {
           <li key={i} className="list foodList">
             <img
               src={imgList[Math.floor(Math.random() * imgList.length)]}
+              alt="food icon"
               key={i}
             />
 
