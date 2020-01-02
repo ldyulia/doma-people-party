@@ -1,0 +1,42 @@
+/* .ant-menu-horizontal {
+  background-color: #000;
+  color: #fff;
+} */
+ul {
+  list-style: none;
+  padding: 0;
+}
+a {
+  color: inherit;
+}
+a:active {
+  color: #21ff1f;
+}
+a:hover {
+  color: #21ff1f;
+}
+.navWrap {
+  background: #000;
+  font-size: 24px;
+
+  font-weight: 900;
+}
+.nav {
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.nav > li {
+  color: #fff;
+  float: left;
+  width: 50%;
+}
+.nav > li.name {
+  color: #21ff1f;
+}
+.subMenu {
+  background-color: #21ff1f;
+  color: #000;
+}
+/* .subMenu > li:active {
+  color: #21ff1f;
+} */
